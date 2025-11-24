@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Impression</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Weather Impression</h1>
+            <p>今の天気を、ひとこと感想に。</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="都市名を入力 (例: 東京, Osaka)" autocomplete="off">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="loading-spinner hidden" id="loading">
+                <div class="spinner"></div>
+            </div>
+
+            <div class="result-card hidden" id="result-card">
+                <div class="weather-info">
+                    <div class="location-badge" id="location-name">Tokyo</div>
+                    <div class="weather-main">
+                        <i class="fa-solid fa-sun" id="weather-icon"></i>
+                        <span class="temperature" id="temperature">25°C</span>
+                    </div>
+                    <div class="weather-details">
+                        <span><i class="fa-solid fa-wind"></i> <span id="wind-speed">3.5 m/s</span></span>
+                        <span><i class="fa-solid fa-droplet"></i> <span id="humidity">45%</span></span>
+                    </div>
+                </div>
+
+                <div class="impression-box">
+                    <label>Generated Impression</label>
+                    <textarea id="impression-text" readonly></textarea>
+                    <button class="copy-btn" id="copy-btn">
+                        <i class="fa-regular fa-copy"></i> Copy Text
+                    </button>
+                </div>
+            </div>
+
+            <div class="error-message hidden" id="error-message">
+                <i class="fa-solid fa-circle-exclamation"></i> <span id="error-text">Error message here</span>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
